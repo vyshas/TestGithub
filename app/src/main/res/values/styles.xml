@@ -1,0 +1,70 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/indigo</item>
+        <item name="colorAccent">@color/indigo</item>
+        <item name="colorControlActivated">?colorPrimary</item>
+        <item name="toolbarStyle">@style/Widget.Toolbar</item>
+        <item name="android:textViewStyle">@style/Widget.TestGithub.TextView</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:statusBarColor">@color/status_bar</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:navigationBarColor">@color/indigo_dark</item>
+        <item name="android:textColorTertiary">@color/text_color_tertiary</item>
+    </style>
+
+    <style name="AppTheme.PopupTheme" parent="ThemeOverlay.MaterialComponents.Light" />
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Widget.TestGithub" parent="@android:style/Widget" />
+
+    <style name="Widget.TestGithub.TextView" parent="@android:style/Widget.Material.TextView">
+        <item name="android:textAppearance">@style/TextAppearance.TestGithub.Body</item>
+        <item name="android:lineSpacingMultiplier">@dimen/text_line_spacing</item>
+    </style>
+
+    <style name="Widget.AppBar" parent="@style/Widget.Design.AppBarLayout">
+        <item name="popupTheme">@style/AppTheme.PopupTheme</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:elevation">8dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="Widget.Toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="titleTextAppearance">@style/TextAppearance.TestGithub.ToolbarTitle</item>
+        <item name="popupTheme">@style/AppTheme.PopupTheme</item>
+    </style>
+
+    <style name="TextAppearance.TestGithub.ToolbarTitle" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:fontFamily">@font/google_sans</item>
+    </style>
+
+    <style name="Widget.TestGithub.Tag">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:lines">1</item>
+        <item name="android:textAppearance">@style/TextAppearance.TestGithub.Tag</item>
+    </style>
+
+    <style name="Widget.TestGithub.Tag.Inline">
+        <item name="android:drawablePadding">@dimen/spacing_micro</item>
+        <item name="android:drawableStart">@drawable/tag_dot</item>
+    </style>
+
+    <style name="TextAppearance.TestGithub.Tag" parent="@style/TextAppearance.TestGithub.ListSecondary" />
+
+    <style name="TextAppearance.TestGithub.Body" parent="@style/TextAppearance.AppCompat.Body1">
+        <item name="android:textColor">?android:textColorSecondary</item>
+    </style>
+
+
+    <style name="TextAppearance.TestGithub.ListSecondary" parent="@style/TextAppearance.AppCompat.Body1">
+        <item name="android:textColor">?android:textColorSecondary</item>
+    </style>
+
+</resources>

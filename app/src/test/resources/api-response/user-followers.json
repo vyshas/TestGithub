@@ -1,0 +1,22 @@
+[
+    {
+        "login": "myduke",
+        "id": 1843807,
+        "node_id": "MDQ6VXNlcjE4NDM4MDc=",
+        "avatar_url": "https://avatars3.githubusercontent.com/u/1843807?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/myduke",
+        "html_url": "https://github.com/myduke",
+        "followers_url": "https://api.github.com/users/myduke/followers",
+        "following_url": "https://api.github.com/users/myduke/following{/other_user}",
+        "gists_url": "https://api.github.com/users/myduke/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/myduke/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/myduke/subscriptions",
+        "organizations_url": "https://api.github.com/users/myduke/orgs",
+        "repos_url": "https://api.github.com/users/myduke/repos",
+        "events_url": "https://api.github.com/users/myduke/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/myduke/received_events",
+        "type": "User",
+        "site_admin": false
+    }
+]

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    app:contentPadding="16dp"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="5dp"
+    card_view:cardPreventCornerOverlap="true">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constrainlayout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/repos_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="name is asda faj"
+            android:textColor="#758a99"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/repos_description"
+           android:layout_marginBottom="@dimen/text_margin"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.74"
+            app:layout_constraintVertical_chainStyle="spread"
+            tools:text="repos name"/>
+
+        <TextView
+            android:id="@+id/repos_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#758a99"
+            android:textSize="14sp"
+            android:text="description sdfkhsfhsfl"
+            android:layout_marginBottom="@dimen/text_margin"
+            app:layout_constraintBottom_toTopOf="@+id/repos_star"
+            app:layout_constraintTop_toBottomOf="@+id/repos_name"
+            tools:text="description"/>
+
+
+        <TextView
+            android:id="@+id/repos_star"
+            style="@style/Widget.TestGithub.Tag.Inline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margin_small"
+            android:drawableStart="@drawable/tag_star"
+            android:ellipsize="end"
+
+            android:maxLines="1"
+            android:text="star count"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintRight_toLeftOf="@+id/repos_language"
+            app:layout_constraintTop_toBottomOf="@+id/repos_description" tools:text="star count"/>
+
+
+        <TextView
+            android:id="@+id/repos_language"
+            style="@style/Widget.TestGithub.Tag.Inline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margin_small"
+            android:maxLines="1"
+            android:text="KOTLIN"
+            app:layout_constraintLeft_toRightOf="@id/repos_star"
+            app:layout_constraintRight_toLeftOf="@id/repos_fork"
+            app:layout_constraintTop_toTopOf="@id/repos_star"
+            tools:drawableStart="@drawable/tag_dot"
+            tools:drawableTint="#f0f"
+
+            tools:text="Langauage"/>
+
+        <TextView
+            android:id="@+id/repos_fork"
+            style="@style/Widget.TestGithub.Tag.Inline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/tag_forked"
+            android:maxLines="1"
+            android:text="fork"
+            app:layout_constraintLeft_toRightOf="@+id/repos_language"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/repos_language"
+            tools:text="fork count"/>
+
+
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.design.card.MaterialCardView>
