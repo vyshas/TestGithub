@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">TestGithub</string>
     <string name="orgrepos_title">Google samples</string>
+    <string name="no_desc_available">No Description Available</string>
+
+
 </resources>

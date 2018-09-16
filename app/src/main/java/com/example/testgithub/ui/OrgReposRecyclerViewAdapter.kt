@@ -1,6 +1,7 @@
 package com.example.testgithub.ui
 
 import android.support.v7.widget.RecyclerView
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,7 +32,7 @@ class OrgReposRecyclerViewAdapter : RecyclerView.Adapter<OrgReposRecyclerViewAda
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = orgReposList[position]
         holder.nameView.text = item.name
-        holder.descriptionView.text = item.description
+        holder.descriptionView.text = if(TextUtils.isEmpty(item.description)) holder.view.context.getString(R.string.no_desc_available) else item.description
         holder.languageView.text = item.language
         holder.forkView.text = item.forksCount.toString()
         holder.starView.text = item.stargazersCount.toString()
