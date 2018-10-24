@@ -6,12 +6,14 @@ import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import com.example.testgithub.AppExecutors
 import com.example.testgithub.R
 import com.example.testgithub.dependencyinjection.Injectable
 import kotlinx.android.synthetic.main.fragment_orgrepos_list.view.*
@@ -29,6 +31,9 @@ class OrgReposFragment : Fragment(), Injectable {
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
+    @Inject
+    lateinit var appExecutors: AppExecutors
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
@@ -42,10 +47,15 @@ class OrgReposFragment : Fragment(), Injectable {
         if (recyclerView is RecyclerView) {
             with(recyclerView) {
                 layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL,false)
-                orgReposRecyclerViewAdapter = OrgReposRecyclerViewAdapter()
+                orgReposRecyclerViewAdapter = OrgReposRecyclerViewAdapter(appExecutors)
                 adapter = orgReposRecyclerViewAdapter
 
             }
+        }
+
+        view.swipeview.setOnRefreshListener {
+            orgReposViewModel.refresh()
+            view.swipeview.isRefreshing = false
         }
 
         return view
@@ -60,12 +70,12 @@ class OrgReposFragment : Fragment(), Injectable {
         orgReposViewModel.setOrganisation("googlesamples")
 
         initListData()
+
     }
 
     private fun initListData() {
-
-        orgReposViewModel.orgReposList.observe(this, Observer {
-            orgReposRecyclerViewAdapter?.submitList(it?.data ?: emptyList())
+        orgReposViewModel.orgReposList.observe(this, Observer {it->
+            orgReposRecyclerViewAdapter?.submitList(it?.data)
 
         })
 

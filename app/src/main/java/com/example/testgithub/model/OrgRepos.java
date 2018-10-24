@@ -5,6 +5,8 @@ import android.arch.persistence.room.Entity;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.Objects;
+
 @Entity(primaryKeys = {"id"})
 public class OrgRepos{
 
@@ -177,4 +179,5 @@ public class OrgRepos{
 	public void setHomepage(String homepage) {
 		this.homepage = homepage;
 	}
+
 }

@@ -12,23 +12,23 @@
         layout="@layout/include_appbar"/>
 
     <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        >
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
 
-<android.support.v7.widget.RecyclerView
-    android:id="@+id/recycler_view"
-    android:name="com.example.testgithub.ui.OrgReposFragment"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
-    app:layoutManager="android.support.v7.widget.LinearLayoutManager"
-    tools:context=".ui.OrgReposFragment"
-    tools:listitem="@layout/item_orgrepos"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:name="com.example.testgithub.ui.OrgReposFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+            tools:context=".ui.OrgReposFragment"
+            tools:listitem="@layout/item_orgrepos"/>
 
-</android.support.v4.widget.SwipeRefreshLayout>
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 </android.support.design.widget.CoordinatorLayout>

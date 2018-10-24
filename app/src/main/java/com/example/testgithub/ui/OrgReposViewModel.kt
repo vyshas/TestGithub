@@ -4,6 +4,7 @@ import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MediatorLiveData
 import android.arch.lifecycle.Transformations
 import android.arch.lifecycle.ViewModel
+import android.text.TextUtils
 import com.example.testgithub.model.OrgRepos
 import com.example.testgithub.model.Resource
 import com.example.testgithub.repository.OrgReposRepository
@@ -14,6 +15,8 @@ class OrgReposViewModel @Inject constructor(private val repository: OrgReposRepo
 
 
     private val organisation = MediatorLiveData<String>()
+
+    private var cacheOrganisation: String? = null
 
     val orgReposList : LiveData<Resource<List<OrgRepos>>> = Transformations.switchMap(organisation){
         orgRepos ->
@@ -29,7 +32,13 @@ class OrgReposViewModel @Inject constructor(private val repository: OrgReposRepo
 
 
     fun setOrganisation(org: String?) {
+        cacheOrganisation = org
         organisation.value = org
+    }
+
+    fun refresh(){
+        //organisation.value?.let { organisation.value = it }
+        if (!TextUtils.isEmpty(cacheOrganisation)) setOrganisation(cacheOrganisation)
     }
 
 
