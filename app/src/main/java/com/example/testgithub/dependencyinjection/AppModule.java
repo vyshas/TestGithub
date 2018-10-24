@@ -41,12 +41,12 @@ class AppModule {
 
     @Singleton
     @Provides
-    OkHttpClient provideOkHttpClient() {
+    OkHttpClient provideOkHttpClient(StethoInterceptor stethoInterceptor) {
 
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .connectTimeout(60, TimeUnit.SECONDS)
                 .readTimeout(60, TimeUnit.SECONDS)
-                .addNetworkInterceptor(new StethoInterceptor())
+                .addNetworkInterceptor(stethoInterceptor)
                 .writeTimeout(10, TimeUnit.MINUTES)
                 .build();
 
@@ -65,6 +65,11 @@ class AppModule {
         return db.orgRepDao();
     }
 
+    @Singleton
+    @Provides
+    public StethoInterceptor provideStethoInterceptor() {
+        return new StethoInterceptor();
+    }
 
 
 
