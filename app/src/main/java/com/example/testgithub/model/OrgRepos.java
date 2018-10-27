@@ -180,4 +180,8 @@ public class OrgRepos{
 		this.homepage = homepage;
 	}
 
+	public OrgRepos(int id, String name) {
+		this.id = id;
+		this.name = name;
+	}
 }

@@ -1,6 +1,5 @@
 package com.example.testgithub.ui
 
-import android.support.v7.recyclerview.extensions.AsyncDifferConfig
 import android.support.v7.recyclerview.extensions.ListAdapter
 import android.support.v7.util.DiffUtil
 import android.support.v7.widget.RecyclerView
@@ -12,12 +11,9 @@ import android.widget.TextView
 import com.example.testgithub.AppExecutors
 import com.example.testgithub.R
 import com.example.testgithub.model.OrgRepos
-
 import kotlinx.android.synthetic.main.item_orgrepos.view.*
 
 class OrgReposRecyclerViewAdapter(appExecutors: AppExecutors) : ListAdapter<OrgRepos,OrgReposRecyclerViewAdapter.OrgReposViewHolder>(DiffCallback()){
-
-
 
     private val mOnClickListener: View.OnClickListener
 
@@ -72,7 +68,6 @@ class OrgReposRecyclerViewAdapter(appExecutors: AppExecutors) : ListAdapter<OrgR
         override fun areContentsTheSame(orgRepos1: OrgRepos, orgRepos2: OrgRepos): Boolean {
             return orgRepos1 == orgRepos2
         }
-
 
     }
 
