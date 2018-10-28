@@ -71,11 +71,15 @@ dependencies {
     implementation deps.constraint_layout
 
     implementation deps.timber
+    implementation deps.room.rxjava2
 
     annotationProcessor deps.dagger.android_support_compiler
     annotationProcessor deps.dagger.compiler
     annotationProcessor deps.room.compiler
     annotationProcessor deps.lifecycle.compiler
+
+    implementation deps.work.runtime
+    implementation deps.work.firebase_job
 
 
     testImplementation deps.junit
@@ -105,7 +109,7 @@ dependencies {
     })
     androidTestImplementation deps.dexmaker
     androidTestImplementation deps.mockito.core, { exclude group: 'net.bytebuddy' }
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
 apply plugin: 'kotlin-android'
