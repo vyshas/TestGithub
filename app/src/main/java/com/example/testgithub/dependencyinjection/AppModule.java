@@ -3,7 +3,7 @@ package com.example.testgithub.dependencyinjection;
 
 
 import android.app.Application;
-import android.arch.persistence.room.Room;
+
 
 import com.example.testgithub.api.GithubService;
 import com.example.testgithub.db.GithubDb;
@@ -16,6 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 import javax.inject.Singleton;
 
+import androidx.room.Room;
 import dagger.Module;
 import dagger.Provides;
 import okhttp3.OkHttpClient;

@@ -1,6 +1,5 @@
 package com.example.testgithub.api;
 
-import android.arch.lifecycle.LiveData;
 
 import com.example.testgithub.model.Followers;
 import com.example.testgithub.model.OrgRepos;
@@ -8,6 +7,7 @@ import com.example.testgithub.model.User;
 
 import java.util.List;
 
+import androidx.lifecycle.LiveData;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 

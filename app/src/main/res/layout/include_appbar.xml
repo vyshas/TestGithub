@@ -1,4 +1,4 @@
-<android.support.design.widget.AppBarLayout
+<com.google.android.material.appbar.AppBarLayout
     android:id="@+id/appbar"
     style="@style/Widget.AppBar"
     android:layout_width="match_parent"
@@ -25,5 +25,5 @@
         </FrameLayout>
 
 
-    </android.support.design.widget.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 

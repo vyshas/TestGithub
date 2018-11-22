@@ -1,5 +1,9 @@
 apply plugin: 'com.android.application'
 apply plugin: 'idea'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'androidx.navigation.safeargs'
 
 idea {
     module {
@@ -19,6 +23,7 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         vectorDrawables.useSupportLibrary = true
+        javaCompileOptions.annotationProcessorOptions.includeCompileClasspath = true
     }
     buildTypes {
         release {
@@ -41,9 +46,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-
 }
-
 
 
 dependencies {
@@ -51,66 +54,52 @@ dependencies {
     implementation deps.support.recyclerview
     implementation deps.support.cardview
     implementation deps.support.design
+    implementation deps.navigation.fragment_ktx
     implementation deps.room.runtime
     implementation deps.lifecycle.runtime
     implementation deps.lifecycle.extensions
     implementation deps.lifecycle.java8
     implementation deps.retrofit.runtime
     implementation deps.retrofit.gson
-    implementation deps.glide
-    annotationProcessor deps.glide
-
-    // Stetho
-    implementation deps.stetho.runtime
-    implementation deps.stetho.okhttp3
-
+    implementation deps.glide.runtime
 
     implementation deps.dagger.runtime
     implementation deps.dagger.android
     implementation deps.dagger.android_support
     implementation deps.constraint_layout
+    implementation deps.kotlin.stdlib
 
     implementation deps.timber
-    implementation deps.room.rxjava2
 
-    annotationProcessor deps.dagger.android_support_compiler
-    annotationProcessor deps.dagger.compiler
-    annotationProcessor deps.room.compiler
-    annotationProcessor deps.lifecycle.compiler
+    // Stetho
+    implementation deps.stetho.runtime
+    implementation deps.stetho.okhttp3
 
-    implementation deps.work.runtime
-    implementation deps.work.firebase_job
+    kapt deps.dagger.android_support_compiler
+    kapt deps.dagger.compiler
+    kapt deps.room.compiler
+    kapt deps.lifecycle.compiler
 
+    implementation deps.work.firebase
 
     testImplementation deps.junit
     testImplementation deps.mock_web_server
-    testImplementation(deps.arch_core.testing, {
-        exclude group: 'com.android.support', module: 'support-compat'
-        exclude group: 'com.android.support', module: 'support-annotations'
-        exclude group: 'com.android.support', module: 'support-core-utils'
-    })
+    testImplementation deps.arch_core.testing
     testImplementation deps.mockito.core
 
+    androidTestImplementation deps.atsl.runner
+    androidTestImplementation deps.atsl.rules
+
+    androidTestImplementation deps.navigation.testing
     androidTestImplementation deps.support.app_compat
     androidTestImplementation deps.support.recyclerview
     androidTestImplementation deps.support.cardview
     androidTestImplementation deps.support.design
 
-    androidTestImplementation(deps.espresso.core, {
-        exclude group: 'com.android.support', module: 'support-annotations'
-        exclude group: 'com.google.code.findbugs', module: 'jsr305'
-    })
-    androidTestImplementation(deps.espresso.contrib, {
-        exclude group: 'com.android.support', module: 'support-annotations'
-        exclude group: 'com.google.code.findbugs', module: 'jsr305'
-    })
+    androidTestImplementation deps.espresso.core
+    androidTestImplementation deps.espresso.contrib
 
-    androidTestImplementation(deps.arch_core.testing, {
-    })
-    androidTestImplementation deps.dexmaker
-    androidTestImplementation deps.mockito.core, { exclude group: 'net.bytebuddy' }
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    androidTestImplementation deps.arch_core.testing
+    androidTestImplementation deps.mockito.core
+    androidTestImplementation deps.mockito.android
 }
-
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.card.MaterialCardView
+<com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/tools"
@@ -14,7 +14,7 @@
     app:cardCornerRadius="5dp"
     card_view:cardPreventCornerOverlap="true">
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constrainlayout"
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -97,6 +97,6 @@
 
 
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</android.support.design.card.MaterialCardView>
+</com.google.android.material.card.MaterialCardView>

@@ -1,13 +1,15 @@
 package com.example.testgithub.ui.common;
 
-import android.arch.lifecycle.ViewModel;
-import android.arch.lifecycle.ViewModelProvider;
+
 
 import java.util.Map;
 
 import javax.inject.Inject;
 import javax.inject.Provider;
 import javax.inject.Singleton;
+
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
 
 @Singleton
 public class GithubViewModelFactory implements ViewModelProvider.Factory {

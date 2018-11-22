@@ -3,63 +3,63 @@ package com.example.testgithub.dependencyinjection;
 import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
 
 import com.example.testgithub.TestGithub;
 
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 import dagger.android.AndroidInjection;
 import dagger.android.support.AndroidSupportInjection;
 import dagger.android.support.HasSupportFragmentInjector;
 
 public class AppInjector {
 
-  public AppInjector() {
-  }
+    public AppInjector() {
+    }
 
-  public static void init(TestGithub testGithub){
-      AppComponent appComponent = DaggerAppComponent.builder().application(testGithub).build();
-      appComponent.inject(testGithub);
+    public static void init(TestGithub testGithub) {
+        AppComponent appComponent = DaggerAppComponent.builder().application(testGithub).build();
+        appComponent.inject(testGithub);
 
-      testGithub.registerActivityLifecycleCallbacks(new Application.ActivityLifecycleCallbacks() {
-          @Override
-          public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
-              handleActivity(activity);
-          }
+        testGithub.registerActivityLifecycleCallbacks(new Application.ActivityLifecycleCallbacks() {
+            @Override
+            public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
+                handleActivity(activity);
+            }
 
-          @Override
-          public void onActivityStarted(Activity activity) {
+            @Override
+            public void onActivityStarted(Activity activity) {
 
-          }
+            }
 
-          @Override
-          public void onActivityResumed(Activity activity) {
+            @Override
+            public void onActivityResumed(Activity activity) {
 
-          }
+            }
 
-          @Override
-          public void onActivityPaused(Activity activity) {
+            @Override
+            public void onActivityPaused(Activity activity) {
 
-          }
+            }
 
-          @Override
-          public void onActivityStopped(Activity activity) {
+            @Override
+            public void onActivityStopped(Activity activity) {
 
-          }
+            }
 
-          @Override
-          public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
+            @Override
+            public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
 
-          }
+            }
 
-          @Override
-          public void onActivityDestroyed(Activity activity) {
+            @Override
+            public void onActivityDestroyed(Activity activity) {
 
-          }
-      });
+            }
+        });
 
-  }
+    }
 
     private static void handleActivity(Activity activity) {
         if (activity instanceof HasSupportFragmentInjector) {

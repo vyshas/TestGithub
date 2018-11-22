@@ -1,26 +1,24 @@
 package com.example.testgithub.ui
 
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProvider
-import android.arch.lifecycle.ViewModelProviders
+
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v4.app.Fragment
-import android.support.v4.widget.SwipeRefreshLayout
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.testgithub.AppExecutors
 import com.example.testgithub.R
 import com.example.testgithub.dependencyinjection.Injectable
 import com.example.testgithub.model.OrgRepos
 import com.example.testgithub.model.Resource
 import com.example.testgithub.model.Status
-import kotlinx.android.synthetic.main.fragment_orgrepos_list.*
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_orgrepos_list.view.*
 import kotlinx.android.synthetic.main.include_appbar.view.*
 import javax.inject.Inject
@@ -53,7 +51,7 @@ class OrgReposFragment : Fragment(), Injectable {
         // Set the orgReposRecyclerViewAdapter
         if (recyclerView is RecyclerView) {
             with(recyclerView) {
-                layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL,false)
+                layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL,false)
                 orgReposRecyclerViewAdapter = OrgReposRecyclerViewAdapter(appExecutors)
                 adapter = orgReposRecyclerViewAdapter
 
@@ -94,13 +92,13 @@ class OrgReposFragment : Fragment(), Injectable {
     private fun updateStatus(resource: Resource<List<OrgRepos>>?) {
         when(resource?.status){
             Status.SUCCESS-> {
-                swipeview.isRefreshing =false
+                layoutView?.swipeview?.isRefreshing =false
             }
             Status.LOADING->{
-                swipeview.isRefreshing = true
+                layoutView?.swipeview?.isRefreshing = true
             }
             Status.ERROR->{
-                swipeview.isRefreshing = false
+                layoutView?.swipeview?.isRefreshing = false
                 //show error
                 showSnackBar(resource.message)
             }

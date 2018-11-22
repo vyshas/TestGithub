@@ -2,13 +2,15 @@
 
 package com.example.testgithub.ui.common;
 
-import android.support.v4.app.FragmentManager;
+
 
 import com.example.testgithub.MainActivity;
 import com.example.testgithub.R;
 import com.example.testgithub.ui.OrgReposFragment;
 
 import javax.inject.Inject;
+
+import androidx.fragment.app.FragmentManager;
 
 /**
  * A utility class that handles navigation in {@link MainActivity}.

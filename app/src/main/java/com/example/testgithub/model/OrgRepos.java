@@ -1,64 +1,63 @@
 package com.example.testgithub.model;
 
-import android.arch.persistence.room.Entity;
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.Objects;
+import androidx.room.Entity;
+
 
 @Entity(primaryKeys = {"id"})
-public class OrgRepos{
+public class OrgRepos {
 
-	@SerializedName("id")
-	private int id;
+    @SerializedName("id")
+    private int id;
 
-	@SerializedName("full_name")
+    @SerializedName("full_name")
     @Expose
-	private String fullName;
+    private String fullName;
 
-	@SerializedName("clone_url")
+    @SerializedName("clone_url")
     @Expose
-	private String cloneUrl;
+    private String cloneUrl;
 
-	@SerializedName("name")
+    @SerializedName("name")
     @Expose
-	private String name;
+    private String name;
 
 
-	@SerializedName("description")
+    @SerializedName("description")
     @Expose
-	private String description;
+    private String description;
 
-	@SerializedName("created_at")
+    @SerializedName("created_at")
     @Expose
-	private String createdAt;
+    private String createdAt;
 
 
-	@SerializedName("updated_at")
+    @SerializedName("updated_at")
     @Expose
-	private String updatedAt;
+    private String updatedAt;
 
-	@SerializedName("git_url")
+    @SerializedName("git_url")
     @Expose
-	private String gitUrl;
+    private String gitUrl;
 
 
-	@SerializedName("downloads_url")
-	private String downloadsUrl;
+    @SerializedName("downloads_url")
+    private String downloadsUrl;
 
 
-	@SerializedName("homepage")
+    @SerializedName("homepage")
     @Expose
-	private String homepage;
+    private String homepage;
 
-	@SerializedName("language")
-	@Expose
-	private String language;
+    @SerializedName("language")
+    @Expose
+    private String language;
 
     @SerializedName("forks_count")
-	@Expose
-	private Integer forksCount;
+    @Expose
+    private Integer forksCount;
 
     @SerializedName("watchers")
     @Expose
@@ -101,87 +100,87 @@ public class OrgRepos{
     }
 
     public int getId() {
-		return id;
-	}
+        return id;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public String getFullName() {
-		return fullName;
-	}
+    public String getFullName() {
+        return fullName;
+    }
 
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
-	}
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
 
-	public String getCloneUrl() {
-		return cloneUrl;
-	}
+    public String getCloneUrl() {
+        return cloneUrl;
+    }
 
-	public void setCloneUrl(String cloneUrl) {
-		this.cloneUrl = cloneUrl;
-	}
+    public void setCloneUrl(String cloneUrl) {
+        this.cloneUrl = cloneUrl;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getDescription() {
-		return description;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	public String getCreatedAt() {
-		return createdAt;
-	}
+    public String getCreatedAt() {
+        return createdAt;
+    }
 
-	public void setCreatedAt(String createdAt) {
-		this.createdAt = createdAt;
-	}
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
 
-	public String getUpdatedAt() {
-		return updatedAt;
-	}
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
 
-	public void setUpdatedAt(String updatedAt) {
-		this.updatedAt = updatedAt;
-	}
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+    }
 
-	public String getGitUrl() {
-		return gitUrl;
-	}
+    public String getGitUrl() {
+        return gitUrl;
+    }
 
-	public void setGitUrl(String gitUrl) {
-		this.gitUrl = gitUrl;
-	}
+    public void setGitUrl(String gitUrl) {
+        this.gitUrl = gitUrl;
+    }
 
-	public String getDownloadsUrl() {
-		return downloadsUrl;
-	}
+    public String getDownloadsUrl() {
+        return downloadsUrl;
+    }
 
-	public void setDownloadsUrl(String downloadsUrl) {
-		this.downloadsUrl = downloadsUrl;
-	}
+    public void setDownloadsUrl(String downloadsUrl) {
+        this.downloadsUrl = downloadsUrl;
+    }
 
-	public String getHomepage() {
-		return homepage;
-	}
+    public String getHomepage() {
+        return homepage;
+    }
 
-	public void setHomepage(String homepage) {
-		this.homepage = homepage;
-	}
+    public void setHomepage(String homepage) {
+        this.homepage = homepage;
+    }
 
-	public OrgRepos(int id, String name) {
-		this.id = id;
-		this.name = name;
-	}
+    public OrgRepos(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 }

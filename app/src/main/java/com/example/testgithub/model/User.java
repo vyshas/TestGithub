@@ -1,8 +1,10 @@
 package com.example.testgithub.model;
 
-import android.support.annotation.NonNull;
+
 
 import com.google.gson.annotations.SerializedName;
+
+import androidx.annotation.NonNull;
 
 
 public  class User {

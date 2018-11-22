@@ -2,7 +2,6 @@ package com.example.testgithub;
 
 import android.app.Activity;
 import android.app.Application;
-import android.content.Context;
 
 import com.example.testgithub.dependencyinjection.AppInjector;
 import com.facebook.stetho.Stetho;

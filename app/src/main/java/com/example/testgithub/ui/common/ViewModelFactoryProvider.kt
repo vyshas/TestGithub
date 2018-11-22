@@ -1,7 +1,8 @@
 package com.example.testgithub.ui.common
 
-import android.arch.lifecycle.ViewModel
-import android.arch.lifecycle.ViewModelProvider
+
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.example.testgithub.ui.OrgReposViewModel
 import dagger.Binds
 import dagger.MapKey

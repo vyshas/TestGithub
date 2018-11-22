@@ -1,11 +1,13 @@
 package com.example.testgithub.util;
 
-import android.arch.lifecycle.LiveData;
+
 import com.example.testgithub.api.ApiResponse;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import javax.annotation.Nullable;
+
+import androidx.lifecycle.LiveData;
 import retrofit2.CallAdapter;
 import retrofit2.Retrofit;
 
