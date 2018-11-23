@@ -78,7 +78,6 @@
             app:layout_constraintTop_toTopOf="@id/repos_star"
             tools:drawableStart="@drawable/tag_dot"
             tools:drawableTint="#f0f"
-
             tools:text="Langauage"/>
 
         <TextView

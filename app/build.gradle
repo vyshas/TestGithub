@@ -13,7 +13,8 @@ idea {
 }
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion build_versions.target_sdk
+    buildToolsVersion build_versions.build_tools
     defaultConfig {
         applicationId "com.example.testgithub"
         minSdkVersion build_versions.min_sdk
