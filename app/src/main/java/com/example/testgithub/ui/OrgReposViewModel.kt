@@ -14,7 +14,6 @@ import javax.inject.Inject
 
 class OrgReposViewModel @Inject constructor(private val repository: OrgReposRepository) : ViewModel() {
 
-
     private val organisation = MediatorLiveData<String>()
 
     private var cacheOrganisation: String? = null
@@ -45,6 +44,5 @@ class OrgReposViewModel @Inject constructor(private val repository: OrgReposRepo
             this.organisation.value = this.organisation.value
         }
     }
-
 
 }

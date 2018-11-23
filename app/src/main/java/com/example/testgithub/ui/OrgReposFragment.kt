@@ -1,7 +1,5 @@
 package com.example.testgithub.ui
 
-
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -26,7 +24,6 @@ import javax.inject.Inject
 
 class OrgReposFragment : Fragment(), Injectable {
 
-    // variable that we shall initialize at a later point in code
     lateinit var orgReposViewModel:OrgReposViewModel
 
     private var orgReposRecyclerViewAdapter: OrgReposRecyclerViewAdapter? = null
