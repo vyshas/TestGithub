@@ -1,8 +1,10 @@
 package com.example.testgithub;
 
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
+
 import com.example.testgithub.api.ApiResponse;
+
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import retrofit2.Response;
 
 public class ApiUtil {

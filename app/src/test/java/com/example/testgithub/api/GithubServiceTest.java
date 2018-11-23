@@ -3,13 +3,10 @@ package com.example.testgithub.api;
 import static com.example.testlastfm.util.LiveDataTestUtil.getValue;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.core.IsNull.notNullValue;
 import static org.junit.Assert.assertThat;
 
-import android.arch.core.executor.testing.InstantTaskExecutorRule;
 
 import com.example.testgithub.model.OrgRepos;
-import com.example.testgithub.model.User;
 import com.example.testgithub.util.LiveDataCallAdapterFactory;
 
 import org.junit.After;
@@ -26,6 +23,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
 import okhttp3.mockwebserver.RecordedRequest;

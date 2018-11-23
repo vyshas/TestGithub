@@ -1,7 +1,6 @@
 package com.example.testgithub.respository;
 
 
-
 import static com.example.testgithub.ApiUtil.successCall;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -9,11 +8,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-
-import android.arch.core.executor.testing.InstantTaskExecutorRule;
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.Observer;
 
 import com.example.testgithub.InstantAppExecutors;
 import com.example.testgithub.api.ApiResponse;
@@ -35,6 +29,11 @@ import org.mockito.ArgumentCaptor;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
+
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Observer;
 
 @SuppressWarnings("unchecked")
 @RunWith(JUnit4.class)
