@@ -27,7 +27,6 @@ class OrgReposViewModel @Inject constructor(private val repository: OrgReposRepo
         }
     }
 
-
     fun setOrganisation(org: String?) {
         cacheOrganisation = org
         organisation.value = org
